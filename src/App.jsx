@@ -68,7 +68,7 @@ function App() {
 							}}
 						>
 							<img
-								src="assets/crown.png"
+								src="./assets/crown.png"
 								style={{ width: 80, height: 60 }}
 							/>
 							<br></br>
