@@ -16,7 +16,7 @@ function Header(props) {
 					}}
 				>
 					<img
-						src="src\assets\crown.png"
+						src="https://github.com/ivonneschwie/SITEPickems/blob/main/src/assets/crown.png"
 						style={{ width: 80, height: 60 }}
 					/>
 					SITE PICKEMS
