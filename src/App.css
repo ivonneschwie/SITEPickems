@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Varsity';
+  src: local('Varsity'), url(./fonts/varsity_regular.ttf) format('truetype');
+}
+
 .login-with-google-btn {
   transition: background-color .3s, box-shadow .3s;
   cursor: pointer;
@@ -5,8 +10,6 @@
   border: none;
   border-radius: 3px;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
-  position: relative;
-  top: 20px;
 
   color: #757575;
   font-size: 14px;

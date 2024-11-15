@@ -66,6 +66,8 @@ function App() {
 							style={{
 								color: "#DCE0DF",
 								textAlign: "center",
+								fontFamily: "Varsity",
+								fontSize: "calc(55px + 0.1vw)",
 							}}
 						>
 							<img

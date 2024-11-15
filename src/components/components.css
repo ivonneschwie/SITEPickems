@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Freshman';
+    src: local('Freshman'), url(../fonts/Freshman.ttf) format('truetype');
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    background-color: rgba(0, 63, 145, 0.2);
+}
+
 .Header {
     height: 80px;
     width: 100%;
@@ -41,23 +53,43 @@
 
 .questiondiv {
     position: relative;
-    width: 175px;
-    min-width: 175px;
-    height: 200px;
-    border: 2px solid white;
+    width: 200px;
+    min-width: 250px;
+    height: 300px;
+    border: 2px solid #292D31;
     border-radius: 10px;
-    margin: 20px;
+    margin: 30px;
     padding: 10px;
+}
+
+.textInput {
+    appearance: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: .2em solid #52baff;
+    border-radius: .2em .2em 0 0;
+    padding: .4em;
+    color: #52baff;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 10px;
 }
 
 .categorylabel {
     position: relative;
-    left: 20px;
     top: 20px;
     margin: 20px 10px 0px 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .categorywrap {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }

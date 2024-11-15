@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import Category from "./Category";
 import "./components.css";
 import { db } from "../firebase/firebaseConfig";
 import {
@@ -110,26 +111,6 @@ function Pickems(props) {
 		});
 	};
 
-	const rule = () => {
-		return (
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "center",
-				}}
-			>
-				<hr
-					style={{
-						color: "white",
-						backgroundColor: "white",
-						height: "2px",
-						width: "95vw",
-					}}
-				></hr>
-			</div>
-		);
-	};
-
 	return (
 		<>
 			<div className="Pickems">
@@ -137,120 +118,29 @@ function Pickems(props) {
 
 				<div style={{ color: "white" }}>
 					<form onSubmit={updatePicks}>
-						<Form.Label className="categorylabel">
-							<h2>ESPORTS</h2>
-						</Form.Label>
-						<div className="categorywrap">
-							{esports.map((question) => (
-								<div className="questiondiv">
-									<Form.Group
-										className="mb-3"
-										controlId={question.name}
-									>
-										<Form.Label>{question.text}</Form.Label>
-										<Form.Control
-											type="text"
-											name={question.name}
-											defaultValue={pick[question.name]}
-											style={{
-												width: "150px",
-												margin: "10px 10px 15px 10px",
-												position: "absolute",
-												bottom: "0px",
-												left: "0px",
-											}}
-										/>
-									</Form.Group>
-								</div>
-							))}
-						</div>
-						{rule()}
+						<Category
+							category={esports}
+							label="ESPORTS"
+							pick={pick}
+						></Category>
 
-						<Form.Label className="categorylabel">
-							<h2>SITE GOT TALENT</h2>
-						</Form.Label>
-						<div className="categorywrap">
-							{sgt.map((question) => (
-								<div className="questiondiv">
-									<Form.Group
-										className="mb-3"
-										controlId={question.name}
-									>
-										<Form.Label>{question.text}</Form.Label>
-										<Form.Control
-											type="text"
-											name={question.name}
-											defaultValue={pick[question.name]}
-											style={{
-												width: "150px",
-												margin: "10px 10px 15px 10px",
-												position: "absolute",
-												bottom: "0px",
-												left: "0px",
-											}}
-										/>
-									</Form.Group>
-								</div>
-							))}
-						</div>
-						{rule()}
+						<Category
+							category={sgt}
+							label="SITE GOT TALENT"
+							pick={pick}
+						></Category>
 
-						<Form.Label className="categorylabel">
-							<h2>MR.&MS. SITE</h2>
-						</Form.Label>
-						<div className="categorywrap">
-							{msite.map((question) => (
-								<div className="questiondiv">
-									<Form.Group
-										className="mb-3"
-										controlId={question.name}
-									>
-										<Form.Label>{question.text}</Form.Label>
-										<Form.Control
-											type="text"
-											name={question.name}
-											defaultValue={pick[question.name]}
-											style={{
-												width: "150px",
-												margin: "10px 10px 15px 10px",
-												position: "absolute",
-												bottom: "0px",
-												left: "0px",
-											}}
-										/>
-									</Form.Group>
-								</div>
-							))}
-						</div>
-						{rule()}
+						<Category
+							category={msite}
+							label="MR. & MS. SITE"
+							pick={pick}
+						></Category>
 
-						<Form.Label className="categorylabel">
-							<h2>MISC</h2>
-						</Form.Label>
-						<div className="categorywrap">
-							{misc.map((question) => (
-								<div className="questiondiv">
-									<Form.Group
-										className="mb-3"
-										controlId={question.name}
-									>
-										<Form.Label>{question.text}</Form.Label>
-										<Form.Control
-											type="text"
-											name={question.name}
-											defaultValue={pick[question.name]}
-											style={{
-												width: "150px",
-												margin: "10px 10px 15px 10px",
-												position: "absolute",
-												bottom: "0px",
-												left: "0px",
-											}}
-										/>
-									</Form.Group>
-								</div>
-							))}
-						</div>
+						<Category
+							category={misc}
+							label="MISC"
+							pick={pick}
+						></Category>
 
 						<div className="Submitdiv">
 							<Button variant="primary" type="submit">
