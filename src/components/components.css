@@ -97,7 +97,7 @@ button:focus {
 }
 
 .textInput:disabled {
-    background-color: rgba(89, 79, 136, 0.158);
+    background-color: rgba(8, 226, 117, 0.24);
 }
 
 .categorylabel {
