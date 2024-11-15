@@ -34,7 +34,7 @@ button:focus {
 }
 
 #username {
-    max-width: 100px;
+    max-width: 20vw;
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
