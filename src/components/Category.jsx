@@ -74,6 +74,7 @@ function Category(props) {
 							<input
 								type="text"
 								className="textInput"
+								category={question.category}
 								name={question.name}
 								defaultValue={pick[question.name]}
 								disabled={isLocked(question.date)}

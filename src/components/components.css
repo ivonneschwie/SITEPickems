@@ -3,13 +3,6 @@
     src: local('Freshman'), url(../fonts/Freshman.ttf) format('truetype');
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    background-color: rgba(0, 63, 145, 0.2);
-}
-
 .Header {
     height: 80px;
     width: 100%;
@@ -82,11 +75,10 @@ button:focus {
     border: none;
     outline: none;
     background-color: transparent;
-    border-bottom: .2em solid #52baff;
     border-radius: .2em .2em 0 0;
     padding: .4em;
-    color: #52baff;
     font-size: large;
+    font-weight: bold;
     position: absolute;
     bottom: 20px;
     left: 10px;
@@ -96,8 +88,44 @@ button:focus {
     padding-left: 10px;
 }
 
-.textInput:disabled {
-    background-color: rgba(8, 226, 117, 0.24);
+.textInput[category="esports"] {
+    color: #52baff;
+    border-bottom: .2em solid #52baff;
+}
+
+.textInput[category="esports"]:disabled,
+.textInput[category="esports"]:focus {
+    background-color: rgba(0, 63, 145, 0.2);
+}
+
+.textInput[category="sgt"] {
+    color: #22f851;
+    border-bottom: .2em solid #22f851;
+}
+
+.textInput[category="sgt"]:disabled,
+.textInput[category="sgt"]:focus {
+    background-color: rgba(26, 196, 91, 0.123);
+}
+
+.textInput[category="msite"] {
+    color: #fc3ebc;
+    border-bottom: .2em solid #fc3ebc;
+}
+
+.textInput[category="msite"]:disabled,
+.textInput[category="msite"]:focus {
+    background-color: rgba(185, 105, 145, 0.26);
+}
+
+.textInput[category="misc"] {
+    color: #ffb62d;
+    border-bottom: .2em solid #ffb62d;
+}
+
+.textInput[category="misc"]:disabled,
+.textInput[category="misc"]:focus {
+    background-color: rgba(230, 218, 56, 0.26);
 }
 
 .categorylabel {
