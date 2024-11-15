@@ -43,6 +43,7 @@ function Pickems(props) {
 			const q = snapshot.docs.map((doc) => ({
 				...doc.data(),
 				id: doc.id,
+				date: doc.data().time.toDate(),
 			}));
 
 			setesports(q);
@@ -53,6 +54,7 @@ function Pickems(props) {
 			const q = snapshot.docs.map((doc) => ({
 				...doc.data(),
 				id: doc.id,
+				date: doc.data().time.toDate(),
 			}));
 
 			setsgt(q);
@@ -63,6 +65,7 @@ function Pickems(props) {
 			const q = snapshot.docs.map((doc) => ({
 				...doc.data(),
 				id: doc.id,
+				date: doc.data().time.toDate(),
 			}));
 
 			setmsite(q);
@@ -73,6 +76,7 @@ function Pickems(props) {
 			const q = snapshot.docs.map((doc) => ({
 				...doc.data(),
 				id: doc.id,
+				date: doc.data().time.toDate(),
 			}));
 
 			setmisc(q);
