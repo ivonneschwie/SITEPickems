@@ -9,6 +9,7 @@ import {
 import { auth } from "./firebase/firebaseConfig";
 import Pickems from "./components/Pickems";
 import "bootstrap/dist/css/bootstrap.min.css";
+import crown from "./assets/crown.png";
 
 function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -68,7 +69,7 @@ function App() {
 							}}
 						>
 							<img
-								src="./assets/crown.png"
+								src={crown}
 								style={{ width: 80, height: 60 }}
 							/>
 							<br></br>

@@ -2,6 +2,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import "./components.css";
+import crown from "src/assets/crown.png";
 
 function Header(props) {
 	return (
@@ -15,10 +16,7 @@ function Header(props) {
 						color: "#DCE0DF",
 					}}
 				>
-					<img
-						src="../assets/crown.png"
-						style={{ width: 80, height: 60 }}
-					/>
+					<img src={crown} style={{ width: 80, height: 60 }} />
 					SITE PICKEMS
 				</h1>
 				<DropdownButton
