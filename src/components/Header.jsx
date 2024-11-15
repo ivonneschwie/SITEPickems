@@ -16,7 +16,6 @@ function Header(props) {
 						color: "#DCE0DF",
 					}}
 				>
-					<img src={crown} style={{ width: 80, height: 60 }} />
 					<img
 						src={crown}
 						style={{ width: 80, height: 60 }}
