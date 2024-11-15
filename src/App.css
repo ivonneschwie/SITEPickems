@@ -55,8 +55,8 @@
 }
 
 .login-div {
-  width: 30vw;
-  min-width: 380px;
+  width: 80vw;
+  max-width: 380px;
   height: 50vh;
   background-color: #ebebeb65;
   display: flex;
