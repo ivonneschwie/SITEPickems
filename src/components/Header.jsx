@@ -1,6 +1,5 @@
 import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
+import { Dropdown, Button, ButtonGroup } from "react-bootstrap";
 import "./components.css";
 import crown from "../assets/crown.png";
 
@@ -32,16 +31,34 @@ function Header(props) {
 					<img src={crown} style={{ width: 80, height: 60 }} />
 					SITE PICKEMS
 				</h1>
-				<DropdownButton
-					id="user-dropdown"
-					title={props.displayName}
-					variant="dark"
+
+				<Dropdown
+					as={ButtonGroup}
 					data-bs-theme="dark"
+					style={{
+						position: "relative",
+						right: "20px",
+					}}
 				>
-					<Dropdown.Item onClick={props.Logout} variant="secondary">
-						Logout
-					</Dropdown.Item>
-				</DropdownButton>
+					<Button variant="dark" id="username" disabled>
+						{props.displayName}
+					</Button>
+
+					<Dropdown.Toggle
+						split
+						variant="dark"
+						id="dropdown-split-basic"
+					/>
+
+					<Dropdown.Menu>
+						<Dropdown.Item
+							onClick={props.Logout}
+							variant="secondary"
+						>
+							Logout
+						</Dropdown.Item>
+					</Dropdown.Menu>
+				</Dropdown>
 			</div>
 		</>
 	);
