@@ -16,7 +16,14 @@ function Header(props) {
 						color: "#DCE0DF",
 					}}
 				>
+<<<<<<< HEAD
 					<img src={crown} style={{ width: 80, height: 60 }} />
+=======
+					<img
+						src={crown}
+						style={{ width: 80, height: 60 }}
+					/>
+>>>>>>> dc19e30 (	modified:   src/App.jsx)
 					SITE PICKEMS
 				</h1>
 				<DropdownButton
