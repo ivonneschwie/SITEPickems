@@ -163,7 +163,7 @@
 }
 
 .mlTeamDiv[picked="picked"] {
-	background-color: rgba(3, 112, 255, 0.692);
+	background-color: rgba(3, 112, 255, 0.534);
 }
 
 .codTeamDiv {
@@ -171,12 +171,12 @@
 	width: 30%;
 	min-width: 250px;
 	border-radius: 10px;
-	border: 5px solid cyan;
+	border: 5px solid rgb(229, 255, 0);
 	padding: 40px;
 }
 
 .codTeamDiv[picked="picked"] {
-	background-color: rgba(255, 238, 0, 0.795);
+	background-color: rgba(255, 238, 0, 0.575);
 }
 
 .msiteDiv {
@@ -185,7 +185,7 @@
 	height: 200px;
 	min-width: 200px;
 	border-radius: 10px;
-	border: 5px solid cyan;
+	border: 5px solid #fc3ebc;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -202,5 +202,5 @@
 }
 
 .msiteDiv[picked="picked"] {
-	background-color: rgba(153, 153, 153, 0.452);
+	background-color: rgba(255, 27, 141, 0.623);
 }
