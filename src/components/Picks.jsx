@@ -167,7 +167,7 @@ function Picks(props) {
 				{rule()}
 
 				<div className="categorylabel">
-					<h2>Mr. SITE</h2>
+					<h1>Mr. SITE</h1>
 				</div>
 				<br></br>
 				<div className="categorywrap" id="mr_site">
@@ -195,7 +195,7 @@ function Picks(props) {
 				{rule()}
 
 				<div className="categorylabel">
-					<h2>Ms. SITE</h2>
+					<h1>Ms. SITE</h1>
 				</div>
 				<br></br>
 				<div className="categorywrap" id="ms_site">
