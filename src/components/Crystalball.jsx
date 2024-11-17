@@ -20,6 +20,30 @@ function Crystalball(props) {
 	return (
 		<>
 			<div style={{ color: "white" }}>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						height: "10px",
+					}}
+				>
+					<h6
+						style={{
+							margin: "0px 30px 0px 30px",
+							textAlign: "center",
+						}}
+					>
+						Predict the future and your prophecies shall come true!
+					</h6>
+				</div>
+				<hr
+					style={{
+						color: "white",
+						backgroundColor: "white",
+						height: "2px",
+					}}
+				></hr>
 				<form onSubmit={updatePicks}>
 					<Category
 						category={esports}

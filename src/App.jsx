@@ -10,6 +10,7 @@ import { auth } from "./firebase/firebaseConfig";
 import Pickems from "./components/Pickems";
 import "bootstrap/dist/css/bootstrap.min.css";
 import crown from "./assets/crown.png";
+import background from "./assets/background.jpg";
 
 function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -60,7 +61,9 @@ function App() {
 	return (
 		<div className="App">
 			{!isLoggedIn && (
-				<div className="login-background">
+				<div className="login-background"  style={{
+					backgroundImage: "url(" + background + ")",
+				}}>
 					<div className="login-div">
 						<h1
 							style={{
@@ -68,6 +71,7 @@ function App() {
 								textAlign: "center",
 								fontFamily: "Varsity",
 								fontSize: "calc(55px + 0.1vw)",
+								textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
 							}}
 						>
 							<img

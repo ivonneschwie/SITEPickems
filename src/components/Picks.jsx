@@ -91,6 +91,30 @@ function Picks(props) {
 	return (
 		<>
 			<div style={{ color: "white" }}>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						height: "10px",
+					}}
+				>
+					<h6
+						style={{
+							margin: "0px 30px 0px 30px",
+							textAlign: "center",
+						}}
+					>
+						pick your victors and walk the path of glory!
+					</h6>
+				</div>
+				<hr
+					style={{
+						color: "white",
+						backgroundColor: "white",
+						height: "2px",
+					}}
+				></hr>
 				<div className="categorylabel">
 					<img
 						src={ml_logo}
