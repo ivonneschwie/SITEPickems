@@ -25,7 +25,7 @@ function Header(props) {
 						left: 15,
 						color: "#DCE0DF",
 						fontFamily: "Freshman",
-						fontSize: "calc(12px + 2.0vw)",
+						fontSize: "calc(12px + 1.8vw)",
 					}}
 				>
 					<img src={crown} style={{ width: 80, height: 60 }} />

@@ -29,22 +29,13 @@ function Category(props) {
 		);
 	};
 
-	const putCountdown = (date) => {
-		if (!isLocked(date)) {
-			return <Countdown date={date} renderer={renderer} />;
-		} else {
-			return <div className="countdown">00:00:00</div>;
-		}
-	};
-
 	const renderer = ({ days, hours, minutes, completed }) => {
 		if (completed) {
-			// Render a completed state
-			return <Completionist />;
+			return <div className="cd"> 00:00:00 </div>;
 		} else {
 			// Render a countdown
 			return (
-				<div className="countdown">
+				<div className="cd">
 					{days < 10 ? "0" + days : days}:
 					{hours < 10 ? "0" + hours : hours}:
 					{minutes < 10 ? "0" + minutes : minutes}
@@ -67,7 +58,10 @@ function Category(props) {
 					<div className="questiondiv">
 						<Form.Group className="mb-3" controlId={question.name}>
 							<Form.Label className="questionContent">
-								{putCountdown(question.date)}
+								<Countdown
+									date={question.date}
+									renderer={renderer}
+								/>
 								<br></br>
 								{question.text}
 							</Form.Label>

@@ -1,143 +1,143 @@
 @font-face {
-    font-family: 'Freshman';
-    src: local('Freshman'), url(../fonts/Freshman.ttf) format('truetype');
+	font-family: "Freshman";
+	src: local("Freshman"), url(../fonts/Freshman.ttf) format("truetype");
 }
 
 .Header {
-    height: 80px;
-    width: 100%;
-    background-color: #0A0E13;
-    border-bottom: 2px solid rgba(51, 51, 51, .25);
-    position: relative;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	height: 80px;
+	width: 100%;
+	background-color: #0a0e13;
+	border-bottom: 2px solid rgba(51, 51, 51, 0.25);
+	position: relative;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .Pickems {
-    background-color: #0F1519;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
+	background-color: #0f1519;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
 }
 
 #username {
-    max-width: 20vw;
-    text-wrap: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	max-width: 20vw;
+	text-wrap: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .Submitdiv {
-    position: fixed;
-    height: 60px;
-    width: 100vw;
-    bottom: 0px;
-    left: 0px;
-    background-color: #0A0E13;
-    border-top: 4px solid #292D31;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	position: fixed;
+	height: 60px;
+	width: 100vw;
+	bottom: 0px;
+	left: 0px;
+	background-color: #0a0e13;
+	border-top: 4px solid #292d31;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .questiondiv {
-    position: relative;
-    width: 200px;
-    min-width: 250px;
-    height: 300px;
-    border: 2px solid #292D31;
-    border-radius: 10px;
-    margin: 30px;
-    padding: 10px;
+	position: relative;
+	width: 200px;
+	min-width: 250px;
+	height: 300px;
+	border: 2px solid #292d31;
+	border-radius: 10px;
+	margin: 30px;
+	padding: 10px;
 }
 
 .questionContent {
-    font-size: large;
-    width: 100%;
+	font-size: large;
+	width: 100%;
 }
 
-.countdown {
-    width: 100%;
-    height: 30px;
-    text-align: right;
-    font-size: medium;
-    color: yellow;
+.cd {
+	width: 100%;
+	height: 30px;
+	text-align: right;
+	font-size: medium;
+	color: yellow;
 }
 
 .textInput {
-    appearance: none;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    border-radius: .2em .2em 0 0;
-    padding: .4em;
-    font-size: large;
-    font-weight: bold;
-    position: absolute;
-    bottom: 20px;
-    left: 10px;
-    width: 90%;
-    height: 50px;
-    border-radius: 10px;
-    padding-left: 10px;
+	appearance: none;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border-radius: 0.2em 0.2em 0 0;
+	padding: 0.4em;
+	font-size: large;
+	font-weight: bold;
+	position: absolute;
+	bottom: 20px;
+	left: 10px;
+	width: 90%;
+	height: 50px;
+	border-radius: 10px;
+	padding-left: 10px;
 }
 
 .textInput[category="esports"] {
-    color: #52baff;
-    border-bottom: .2em solid #52baff;
+	color: #52baff;
+	border-bottom: 0.2em solid #52baff;
 }
 
 .textInput[category="esports"]:disabled,
 .textInput[category="esports"]:focus {
-    background-color: rgba(0, 63, 145, 0.2);
+	background-color: rgba(0, 63, 145, 0.2);
 }
 
 .textInput[category="sgt"] {
-    color: #22f851;
-    border-bottom: .2em solid #22f851;
+	color: #22f851;
+	border-bottom: 0.2em solid #22f851;
 }
 
 .textInput[category="sgt"]:disabled,
 .textInput[category="sgt"]:focus {
-    background-color: rgba(26, 196, 91, 0.123);
+	background-color: rgba(26, 196, 91, 0.123);
 }
 
 .textInput[category="msite"] {
-    color: #fc3ebc;
-    border-bottom: .2em solid #fc3ebc;
+	color: #fc3ebc;
+	border-bottom: 0.2em solid #fc3ebc;
 }
 
 .textInput[category="msite"]:disabled,
 .textInput[category="msite"]:focus {
-    background-color: rgba(185, 105, 145, 0.26);
+	background-color: rgba(185, 105, 145, 0.26);
 }
 
 .textInput[category="misc"] {
-    color: #ffb62d;
-    border-bottom: .2em solid #ffb62d;
+	color: #ffb62d;
+	border-bottom: 0.2em solid #ffb62d;
 }
 
 .textInput[category="misc"]:disabled,
 .textInput[category="misc"]:focus {
-    background-color: rgba(230, 218, 56, 0.26);
+	background-color: rgba(230, 218, 56, 0.26);
 }
 
 .categorylabel {
-    position: relative;
-    top: 20px;
-    margin: 20px 10px 0px 10px;
-    display: flex;
-    justify-content: center;
+	position: relative;
+	top: 20px;
+	margin: 20px 10px 0px 10px;
+	display: flex;
+	justify-content: center;
 }
 
 .categorywrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }

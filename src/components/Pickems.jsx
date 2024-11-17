@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
-import Category from "./Category";
+import Crystalball from "./Crystalball";
+import Picks from "./Picks";
 import "./components.css";
 import { db } from "../firebase/firebaseConfig";
 import {
@@ -14,9 +15,10 @@ import {
 	addDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Tab, Tabs } from "react-bootstrap";
 
 function Pickems(props) {
+	const [key, setKey] = useState("picks");
 	const [pick, setPick] = useState([]);
 	const [esports, setesports] = useState([]);
 	const [sgt, setsgt] = useState([[]]);
@@ -99,8 +101,6 @@ function Pickems(props) {
 		const payload = Object.fromEntries(formData);
 		payload["email"] = props.email;
 
-		console.log(payload);
-
 		const pickemsquery = query(
 			collection(db, "pickems"),
 			where("email", "==", props.email)
@@ -119,42 +119,39 @@ function Pickems(props) {
 		<>
 			<div className="Pickems">
 				<Header displayName={props.displayName} Logout={props.Logout} />
-
-				<div style={{ color: "white" }}>
-					<form onSubmit={updatePicks}>
-						<Category
-							category={esports}
-							label="ESPORTS"
+				<Tabs
+					activeKey={key}
+					onSelect={(k) => setKey(k)}
+					className="mb-3"
+					id="pickemstabs"
+					fill
+					style={{
+						fontFamily: "Freshman",
+					}}
+				>
+					<Tab
+						eventKey="picks"
+						className="mb-3"
+						id="picktab"
+						title="Picks"
+					>
+						<Picks></Picks>
+					</Tab>
+					<Tab
+						eventKey="crystalball"
+						className="mb-3"
+						title="Crystal Ball"
+					>
+						<Crystalball
 							pick={pick}
-						></Category>
-
-						<Category
-							category={sgt}
-							label="SITE GOT TALENT"
-							pick={pick}
-						></Category>
-
-						<Category
-							category={msite}
-							label="MR. & MS. SITE"
-							pick={pick}
-						></Category>
-
-						<Category
-							category={misc}
-							label="MISC"
-							pick={pick}
-						></Category>
-
-						<div className="Submitdiv">
-							<Button variant="primary" type="submit">
-								Submit
-							</Button>
-						</div>
-					</form>
-				</div>
-
-				<div style={{ height: "60px", width: "100vw" }}></div>
+							esports={esports}
+							sgt={sgt}
+							msite={msite}
+							misc={misc}
+							updatePicks={updatePicks}
+						></Crystalball>
+					</Tab>
+				</Tabs>
 			</div>
 		</>
 	);
