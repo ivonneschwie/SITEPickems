@@ -55,12 +55,23 @@ function Category(props) {
 			</Form.Label>
 			<div className="categorywrap">
 				{category.map((question) => (
-					<div className="questiondiv">
-						<Form.Group className="mb-3" controlId={question.name}>
-							<Form.Label className="questionContent">
+					<div
+						className="questiondiv"
+						key={question.name + "/questiondiv"}
+					>
+						<Form.Group
+							className="mb-3"
+							controlId={question.name}
+							key={question.name + "/formGroup"}
+						>
+							<Form.Label
+								className="questionContent"
+								key={question.name + "/formLabel"}
+							>
 								<Countdown
 									date={question.date}
 									renderer={renderer}
+									key={question.name + "/countdown"}
 								/>
 								<br></br>
 								{question.text}
@@ -72,6 +83,7 @@ function Category(props) {
 								name={question.name}
 								defaultValue={pick[question.name]}
 								disabled={isLocked(question.date)}
+								key={question.name + "/textinput"}
 							/>
 						</Form.Group>
 					</div>

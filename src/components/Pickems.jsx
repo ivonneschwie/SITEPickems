@@ -115,6 +115,26 @@ function Pickems(props) {
 		});
 	};
 
+	const pushpick = (category, val) => {
+
+		const payload = {
+			email: props.email,
+			[category]: val
+		}
+		const pickemsquery = query(
+			collection(db, "pickems"),
+			where("email", "==", props.email)
+		);
+
+		getDocs(pickemsquery).then((snapshot) => {
+			if (snapshot.size == 0) {
+				addDoc(collection(db, "pickems"), payload);
+			} else {
+				updateDoc(doc(db, "pickems", pick.id), payload);
+			}
+		});
+	}
+
 	return (
 		<>
 			<div className="Pickems">
@@ -135,7 +155,7 @@ function Pickems(props) {
 						id="picktab"
 						title="Picks"
 					>
-						<Picks></Picks>
+						<Picks pushpick={pushpick} pick={pick} ></Picks>
 					</Tab>
 					<Tab
 						eventKey="crystalball"
