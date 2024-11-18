@@ -205,3 +205,16 @@
 .msiteDiv[picked="picked"] {
 	background-color: rgba(255, 27, 141, 0.623);
 }
+
+/*Edit*/
+
+.modal-height,
+.modal-width {
+	height: 90vh;
+	width: 95vw !important;
+	max-width: 600px !important;
+}
+
+.qtext {
+	size: 60%;
+}

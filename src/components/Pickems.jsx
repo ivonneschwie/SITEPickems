@@ -13,9 +13,11 @@ import {
 	where,
 	updateDoc,
 	addDoc,
+	Timestamp,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Tab, Tabs } from "react-bootstrap";
+import moment from "moment";
 
 function Pickems(props) {
 	const [key, setKey] = useState("picks");
@@ -115,12 +117,24 @@ function Pickems(props) {
 		});
 	};
 
-	const pushpick = (category, val) => {
+	const updateQuestions = (e) => {
+		e.preventDefault();
 
+		const formData = new FormData(e.target);
+		const payload = Object.fromEntries(formData);
+
+		Object.entries(payload).forEach(([key, value]) => {
+			updateDoc(doc(db, "questions", key), {
+				text: value,
+			});
+		});
+	};
+
+	const pushpick = (category, val) => {
 		const payload = {
 			email: props.email,
-			[category]: val
-		}
+			[category]: val,
+		};
 		const pickemsquery = query(
 			collection(db, "pickems"),
 			where("email", "==", props.email)
@@ -133,12 +147,21 @@ function Pickems(props) {
 				updateDoc(doc(db, "pickems", pick.id), payload);
 			}
 		});
-	}
+	};
 
 	return (
 		<>
 			<div className="Pickems">
-				<Header displayName={props.displayName} Logout={props.Logout} />
+				<Header
+					displayName={props.displayName}
+					Logout={props.Logout}
+					admin={pick.admin == true}
+					esports={esports}
+					sgt={sgt}
+					msite={msite}
+					misc={misc}
+					updateQuestions={updateQuestions}
+				/>
 				<Tabs
 					activeKey={key}
 					onSelect={(k) => setKey(k)}
@@ -155,7 +178,7 @@ function Pickems(props) {
 						id="picktab"
 						title="Picks"
 					>
-						<Picks pushpick={pushpick} pick={pick} ></Picks>
+						<Picks pushpick={pushpick} pick={pick}></Picks>
 					</Tab>
 					<Tab
 						eventKey="crystalball"

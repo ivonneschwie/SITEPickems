@@ -1,20 +1,15 @@
 import React from "react";
 import { Dropdown, Button, ButtonGroup } from "react-bootstrap";
 import "./components.css";
+import Edit from "./Edit";
 import crown from "../assets/crown.png";
+import { useEffect, useState } from "react";
+import { Modal } from "react-bootstrap";
 
 function Header(props) {
-	const useScreenWidth = () => {
-		const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-		useEffect(() => {
-			const handleResize = () => setScreenWidth(window.innerWidth);
-			window.addEventListener("resize", handleResize);
-			return () => window.removeEventListener("resize", handleResize);
-		}, []);
-
-		return screenWidth;
-	};
+	const [showEdit, setShowEdit] = useState(false);
+	const handleClose = () => setShowEdit(false);
+	const handleShowEdit = () => setShowEdit(true);
 	return (
 		<>
 			<div className="Header">
@@ -50,7 +45,17 @@ function Header(props) {
 						id="dropdown-split-basic"
 					/>
 
-					<Dropdown.Menu>
+					<Dropdown.Menu style={{ textAlign: "center" }}>
+						{props.admin && (
+							<Dropdown.Item
+								onClick={() => {
+									handleShowEdit();
+								}}
+								variant="secondary"
+							>
+								Edit
+							</Dropdown.Item>
+						)}
 						<Dropdown.Item
 							onClick={props.Logout}
 							variant="secondary"
@@ -60,6 +65,53 @@ function Header(props) {
 					</Dropdown.Menu>
 				</Dropdown>
 			</div>
+			<Modal
+				aria-labelledby="contained-modal-title-vcenter"
+				centered
+				show={showEdit}
+				onHide={handleClose}
+				dialogClassName="modal-width"
+				contentClassName="modal-height"
+			>
+				<Modal.Header
+					closeButton
+					style={{ backgroundColor: "rgb(90, 90, 90)" }}
+				>
+					<Modal.Title>SITE Pickems</Modal.Title>
+				</Modal.Header>
+				<form onSubmit={props.updateQuestions}>
+					<Modal.Body>
+						<Edit
+							esports={props.esports}
+							sgt={props.sgt}
+							msite={props.msite}
+							misc={props.misc}
+						></Edit>
+					</Modal.Body>
+					<Modal.Footer
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							position: "absolute",
+							width: "100%",
+							bottom: "0px",
+							left: "0px",
+							backgroundColor: "rgb(90, 90, 90)",
+						}}
+					>
+						<Button
+							variant="primary"
+							type="submit"
+							onClick={handleClose}
+						>
+							Submit
+						</Button>
+						<Button variant="secondary" onClick={handleClose}>
+							Close
+						</Button>
+					</Modal.Footer>
+				</form>
+			</Modal>
 		</>
 	);
 }
