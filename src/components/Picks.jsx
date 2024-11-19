@@ -201,6 +201,7 @@ function Picks(props) {
 							picked={
 								msitem == contestant[1] ? "picked" : "notpicked"
 							}
+							key={contestant[1] + "/div"}
 						>
 							<img
 								src={contestant[0]}
@@ -210,9 +211,14 @@ function Picks(props) {
 									setmsitem(contestant[1]);
 									picked("msitem", contestant[1]);
 								}}
+								key={contestant[1] + "/img"}
 							></img>
-							<h5>{contestant[1]}</h5>
-							<h6>{contestant[2]}</h6>
+							<h5 key={contestant[1] + "/name"}>
+								{contestant[1]}
+							</h5>
+							<h6 key={contestant[1] + "/block"}>
+								{contestant[2]}
+							</h6>
 						</div>
 					))}
 				</div>

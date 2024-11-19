@@ -215,6 +215,9 @@
 	max-width: 600px !important;
 }
 
-.qtext {
-	size: 60%;
+.qcategorydiv {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 5px 0px 10px 0px;
 }
