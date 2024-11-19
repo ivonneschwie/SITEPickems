@@ -197,7 +197,7 @@ function Picks(props) {
 				<div className="categorywrap" id="mr_site">
 					{msitem_imgs.map((contestant) => (
 						<div
-							className="msiteDiv"
+							className="msitemDiv"
 							picked={
 								msitem == contestant[1] ? "picked" : "notpicked"
 							}
@@ -231,7 +231,7 @@ function Picks(props) {
 				<div className="categorywrap" id="ms_site">
 					{msitem_imgs.map((contestant) => (
 						<div
-							className="msiteDiv"
+							className="msitefDiv"
 							picked={
 								msitef == contestant[1] ? "picked" : "notpicked"
 							}
