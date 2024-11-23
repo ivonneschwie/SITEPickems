@@ -1,12 +1,18 @@
 import { React, useEffect, useState } from "react";
 import "./components.css";
+import { Dropdown } from "react-bootstrap";
+
 import ml_logo from "../assets/ml/ml_logo.png";
 import mlteam1_img from "../assets/ml/ml_team1.png";
 import mlteam2_img from "../assets/ml/ml_team2.png";
+import mlteam3_img from "../assets/ml/ml_team3.png";
+import mlteam4_img from "../assets/ml/ml_team4.png";
 
 import codm_logo from "../assets/codm/codm_logo.png";
 import codmteam1_img from "../assets/codm/codm_team1.png";
 import codmteam2_img from "../assets/codm/codm_team2.png";
+import codmteam3_img from "../assets/codm/codm_team3.png";
+import codmteam4_img from "../assets/codm/codm_team4.png";
 
 import msitem01 from "../assets/msitem/msitem_01.png";
 import msitem02 from "../assets/msitem/msitem_02.png";
@@ -27,8 +33,16 @@ import msitef07 from "../assets/msitef/msitef_07.png";
 import msitef08 from "../assets/msitef/msitef_08.png";
 
 function Picks(props) {
-	const [ml, setml] = useState([]);
-	const [cod, setcod] = useState([]);
+	const [mlcategory, setmlcategory] = useState("Semi-Finals");
+	const [mlsemis1, setmlsemis1] = useState([]);
+	const [mlsemis2, setmlsemis2] = useState([]);
+	const [mlfinals, setmlfinals] = useState([]);
+
+	const [codcategory, setcodcategory] = useState("Semi-Finals");
+	const [codsemis1, setcodsemis1] = useState([]);
+	const [codsemis2, setcodsemis2] = useState([]);
+	const [codfinals, setcodfinals] = useState([]);
+
 	const [sgt, setsgt] = useState([]);
 	const [msitem, setmsitem] = useState([]);
 	const [msitef, setmsitef] = useState([]);
@@ -56,8 +70,14 @@ function Picks(props) {
 	];
 
 	useEffect(() => {
-		setml(props.pick.ml);
-		setcod(props.pick.cod);
+		setmlsemis1(props.pick.mlsemis1);
+		setmlsemis2(props.pick.mlsemis2);
+		setmlfinals(props.pick.mlfinals);
+
+		setcodsemis1(props.pick.codsemis1);
+		setcodsemis2(props.pick.codsemis2);
+		setcodfinals(props.pick.codfinals);
+
 		setsgt(props.pick.sgt);
 		setmsitem(props.pick.msitem);
 		setmsitef(props.pick.msitef);
@@ -123,33 +143,136 @@ function Picks(props) {
 					></img>
 				</div>
 				<br></br>
-				<div className="categorywrap" id="mobilelegends">
-					<div
-						className="mlTeamDiv"
-						picked={ml == "team1" ? "picked" : "notpicked"}
-					>
-						<img
-							src={mlteam1_img}
-							className="img"
-							onClick={() => {
-								setml("team1");
-								picked("ml", "team1");
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+				>
+					<Dropdown data-bs-theme="dark" style={{ margin: "30px" }}>
+						<Dropdown.Toggle
+							id="dropdown-basic"
+							variant="dark"
+							style={{
+								borderRadius: "20px",
+								padding: "15px",
+								width: "200px",
 							}}
-						></img>
-					</div>
-					<div
-						className="mlTeamDiv"
-						picked={ml == "team2" ? "picked" : "notpicked"}
-					>
-						<img
-							src={mlteam2_img}
-							className="img"
-							onClick={() => {
-								setml("team2");
-								picked("ml", "team2");
+						>
+							{mlcategory}
+						</Dropdown.Toggle>
+
+						<Dropdown.Menu>
+							<Dropdown.Item
+								onClick={() => {
+									setmlcategory("Semi-Finals");
+								}}
+							>
+								Semi-Finals
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => {
+									setmlcategory("Finals");
+								}}
+							>
+								Finals
+							</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>
+					{mlcategory == "Semi-Finals" && (
+						<div
+							Style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
 							}}
-						></img>
-					</div>
+						>
+							<div className="gamesDiv">
+								<h2>Game 1</h2>
+							</div>
+							<div className="categorywrap" id="mobilelegends">
+								<div
+									className="mlTeamDiv"
+									picked={
+										mlsemis1 == "team1"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={mlteam1_img}
+										className="img"
+										onClick={() => {
+											setmlsemis1("team1");
+											picked("mlsemis1", "team1");
+										}}
+									></img>
+								</div>
+								<div
+									className="mlTeamDiv"
+									picked={
+										mlsemis1 == "team2"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={mlteam2_img}
+										className="img"
+										onClick={() => {
+											setmlsemis1("team2");
+											picked("mlsemis1", "team2");
+										}}
+									></img>
+								</div>
+							</div>
+							<div className="gamesDiv">
+								<h2>Game2</h2>
+							</div>
+							<div className="categorywrap" id="mobilelegends">
+								<div
+									className="mlTeamDiv"
+									picked={
+										mlsemis2 == "team3"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={mlteam3_img}
+										className="img"
+										onClick={() => {
+											setmlsemis2("team3");
+											picked("mlsemis2", "team3");
+										}}
+									></img>
+								</div>
+								<div
+									className="mlTeamDiv"
+									picked={
+										mlsemis2 == "team4"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={mlteam4_img}
+										className="img"
+										onClick={() => {
+											setmlsemis2("team4");
+											picked("mlsemis2", "team4");
+										}}
+									></img>
+								</div>
+							</div>
+						</div>
+					)}
+					{mlcategory == "Finals" && (
+						<div style={{ margin: "50px" }}>
+							<h2>TBA</h2>
+						</div>
+					)}
 				</div>
 				{rule()}
 				<div className="categorylabel">
@@ -160,33 +283,136 @@ function Picks(props) {
 					></img>
 				</div>
 				<br></br>
-				<div className="categorywrap" id="callofduty">
-					<div
-						className="codTeamDiv"
-						picked={cod == "team1" ? "picked" : "notpicked"}
-					>
-						<img
-							src={codmteam1_img}
-							className="img"
-							onClick={() => {
-								setcod("team1");
-								picked("cod", "team1");
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+				>
+					<Dropdown data-bs-theme="dark" style={{ margin: "30px" }}>
+						<Dropdown.Toggle
+							id="dropdown-basic"
+							variant="dark"
+							style={{
+								borderRadius: "20px",
+								padding: "15px",
+								width: "200px",
 							}}
-						></img>
-					</div>
-					<div
-						className="codTeamDiv"
-						picked={cod == "team2" ? "picked" : "notpicked"}
-					>
-						<img
-							src={codmteam2_img}
-							className="img"
-							onClick={() => {
-								setcod("team2");
-								picked("cod", "team2");
+						>
+							{codcategory}
+						</Dropdown.Toggle>
+
+						<Dropdown.Menu>
+							<Dropdown.Item
+								onClick={() => {
+									setcodcategory("Semi-Finals");
+								}}
+							>
+								Semi-Finals
+							</Dropdown.Item>
+							<Dropdown.Item
+								onClick={() => {
+									setcodcategory("Finals");
+								}}
+							>
+								Finals
+							</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>
+					{codcategory == "Semi-Finals" && (
+						<div
+							Style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
 							}}
-						></img>
-					</div>
+						>
+							<div className="gamesDiv">
+								<h2>Game 1</h2>
+							</div>
+							<div className="categorywrap" id="callofduty">
+								<div
+									className="codTeamDiv"
+									picked={
+										codsemis1 == "team1"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={codmteam1_img}
+										className="img"
+										onClick={() => {
+											setcodsemis1("team1");
+											picked("codsemis1", "team1");
+										}}
+									></img>
+								</div>
+								<div
+									className="codTeamDiv"
+									picked={
+										codsemis1 == "team2"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={codmteam2_img}
+										className="img"
+										onClick={() => {
+											setcodsemis1("team2");
+											picked("codsemis1", "team2");
+										}}
+									></img>
+								</div>
+							</div>
+							<div className="gamesDiv">
+								<h2>Game2</h2>
+							</div>
+							<div className="categorywrap" id="callofduty">
+								<div
+									className="codTeamDiv"
+									picked={
+										codsemis2 == "team3"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={codmteam3_img}
+										className="img"
+										onClick={() => {
+											setcodsemis2("team3");
+											picked("codsemis2", "team3");
+										}}
+									></img>
+								</div>
+								<div
+									className="codTeamDiv"
+									picked={
+										codsemis2 == "team4"
+											? "picked"
+											: "notpicked"
+									}
+								>
+									<img
+										src={codmteam4_img}
+										className="img"
+										onClick={() => {
+											setcodsemis2("team4");
+											picked("codsemis2", "team4");
+										}}
+									></img>
+								</div>
+							</div>
+						</div>
+					)}
+					{codcategory == "Finals" && (
+						<div style={{ margin: "50px" }}>
+							<h2>TBA</h2>
+						</div>
+					)}
 				</div>
 				{rule()}
 
