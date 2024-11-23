@@ -124,8 +124,9 @@ function Pickems(props) {
 		const payload = Object.fromEntries(formData);
 
 		Object.entries(payload).forEach(([key, value]) => {
-			updateDoc(doc(db, "questions", key), {
-				text: value,
+			key = key.split("/");
+			updateDoc(doc(db, "questions", key[0]), {
+				[key[1]]: value,
 			});
 		});
 	};

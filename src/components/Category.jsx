@@ -76,15 +76,53 @@ function Category(props) {
 								<br></br>
 								{question.text}
 							</Form.Label>
-							<input
-								type="text"
-								className="textInput"
-								category={question.category}
-								name={question.name}
-								defaultValue={pick[question.name]}
-								disabled={isLocked(question.date)}
-								key={question.name + "/textinput"}
-							/>
+							{question.type != "dropdown" && (
+								<input
+									type="text"
+									className="textInput"
+									category={question.category}
+									name={question.name}
+									defaultValue={pick[question.name]}
+									disabled={isLocked(question.date)}
+									key={question.name + "/textinput"}
+								/>
+							)}
+							{question.type == "dropdown" && (
+								<select
+									className="dropdownInput"
+									category={question.category}
+									name={question.name}
+									defaultValue={pick[question.name]}
+									disabled={isLocked(question.date)}
+									key={question.name + "/dropdowninput"}
+								>
+									<option
+										value={pick[question.name]}
+										selected
+										disabled
+										hidden
+									>
+										{pick[question.name]}
+									</option>
+									{question.options
+										.split(",")
+										.map((option) => (
+											<option
+												value={option}
+												style={{
+													backgroundColor: "#292d31",
+												}}
+												key={
+													question.name +
+													"/option/" +
+													option
+												}
+											>
+												{option}
+											</option>
+										))}
+								</select>
+							)}
 						</Form.Group>
 					</div>
 				))}

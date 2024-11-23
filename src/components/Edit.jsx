@@ -1,7 +1,7 @@
 import React from "react";
+import Question from "./Question";
 import "./components.css";
-import { Form, FormControl } from "react-bootstrap";
-import moment from "moment";
+import { Form } from "react-bootstrap";
 
 function Edit(props) {
 	return (
@@ -21,72 +21,28 @@ function Edit(props) {
 				<div className="qcategorydiv">
 					<h5>Esports</h5>
 					{props.esports.map((question) => (
-						<div style={{ width: "100%" }}>
-							<Form.Label key={question.id + "/formLabel"}>
-								{question.name.replace("esports", "") + ". "}
-							</Form.Label>
-							<input
-								type="text"
-								name={question.id}
-								defaultValue={question.text}
-								key={question.id + "/qtextinput"}
-								style={{ width: "90%", margin: "10px" }}
-							/>
-						</div>
+						<Question question={question}></Question>
 					))}
 				</div>
 
 				<div className="qcategorydiv">
 					<h5>Site Got Talent</h5>
 					{props.sgt.map((question) => (
-						<div style={{ width: "100%" }}>
-							<Form.Label key={question.id + "/formLabel"}>
-								{question.name.replace("sgt", "") + ". "}
-							</Form.Label>
-							<input
-								type="text"
-								name={question.id}
-								defaultValue={question.text}
-								key={question.id + "/qtextinput"}
-								style={{ width: "90%", margin: "10px" }}
-							/>
-						</div>
+						<Question question={question}></Question>
 					))}
 				</div>
 
 				<div className="qcategorydiv">
 					<h5>Mr. & Ms. SITE</h5>
 					{props.msite.map((question) => (
-						<div style={{ width: "100%" }}>
-							<Form.Label key={question.id + "/formLabel"}>
-								{question.name.replace("msite", "") + ". "}
-							</Form.Label>
-							<input
-								type="text"
-								name={question.id}
-								defaultValue={question.text}
-								key={question.id + "/qtextinput"}
-								style={{ width: "90%", margin: "10px" }}
-							/>
-						</div>
+						<Question question={question}></Question>
 					))}
 				</div>
 
 				<div className="qcategorydiv">
 					<h5>Misc</h5>
 					{props.misc.map((question) => (
-						<div style={{ width: "100%" }}>
-							<Form.Label key={question.id + "/formLabel"}>
-								{question.name.replace("misc", "") + ". "}
-							</Form.Label>
-							<input
-								type="text"
-								name={question.id}
-								defaultValue={question.text}
-								key={question.id + "/qtextinput"}
-								style={{ width: "90%", margin: "10px" }}
-							/>
-						</div>
+						<Question question={question}></Question>
 					))}
 				</div>
 			</div>

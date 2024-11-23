@@ -90,43 +90,71 @@
 	padding-left: 10px;
 }
 
-.textInput[category="esports"] {
+.dropdownInput {
+	outline: none;
+	background-color: transparent;
+	border-radius: 0.2em 0.2em 0 0;
+	padding: 0.4em;
+	font-size: large;
+	font-weight: bold;
+	position: absolute;
+	bottom: 20px;
+	left: 10px;
+	width: 90%;
+	height: 50px;
+	border-radius: 10px;
+	padding-left: 10px;
+}
+
+.textInput[category="esports"],
+.dropdownInput[category="esports"] {
 	color: #52baff;
 	border-bottom: 0.2em solid #52baff;
 }
 
 .textInput[category="esports"]:disabled,
-.textInput[category="esports"]:focus {
+.textInput[category="esports"]:focus,
+.dropdownInput[category="esports"]:disabled,
+.dropdownInput[category="esports"]:focus {
 	background-color: rgba(0, 63, 145, 0.2);
 }
 
-.textInput[category="sgt"] {
+.textInput[category="sgt"],
+.dropdownInput[category="sgt"] {
 	color: #22f851;
 	border-bottom: 0.2em solid #22f851;
 }
 
 .textInput[category="sgt"]:disabled,
-.textInput[category="sgt"]:focus {
+.textInput[category="sgt"]:focus,
+.dropdownInput[category="sgt"]:disabled,
+.dropdownInput[category="sgt"]:focus {
 	background-color: rgba(26, 196, 91, 0.123);
 }
 
-.textInput[category="msite"] {
+.textInput[category="msite"],
+.dropdownInput[category="msite"] {
 	color: #fc3ebc;
 	border-bottom: 0.2em solid #fc3ebc;
 }
 
 .textInput[category="msite"]:disabled,
-.textInput[category="msite"]:focus {
+.textInput[category="msite"]:focus,
+.dropdownInput[category="msite"]:disabled,
+.dropdownInput[category="msite"]:focus {
 	background-color: rgba(185, 105, 145, 0.26);
 }
 
-.textInput[category="misc"] {
+.textInput[category="misc"],
+.dropdownInput[category="misc"] {
 	color: #ffb62d;
 	border-bottom: 0.2em solid #ffb62d;
 }
 
 .textInput[category="misc"]:disabled,
-.textInput[category="misc"]:focus {
+.textInput[category="misc"]:focus,
+.dropdownInput[category="misc"]:disabled,
+.dropdownInput[category="misc"]:focus {
 	background-color: rgba(230, 218, 56, 0.26);
 }
 
