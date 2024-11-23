@@ -30,7 +30,6 @@ import msitef04 from "../assets/msitef/msitef_04.png";
 import msitef05 from "../assets/msitef/msitef_05.png";
 import msitef06 from "../assets/msitef/msitef_06.png";
 import msitef07 from "../assets/msitef/msitef_07.png";
-import msitef08 from "../assets/msitef/msitef_08.png";
 
 function Picks(props) {
 	const [mlcategory, setmlcategory] = useState("Semi-Finals");
@@ -43,30 +42,28 @@ function Picks(props) {
 	const [codsemis2, setcodsemis2] = useState([]);
 	const [codfinals, setcodfinals] = useState([]);
 
-	const [sgt, setsgt] = useState([]);
 	const [msitem, setmsitem] = useState([]);
 	const [msitef, setmsitef] = useState([]);
 
 	const msitem_imgs = [
-		[msitem01, "name1", "block1"],
-		[msitem02, "name2", "block2"],
-		[msitem03, "name3", "block3"],
-		[msitem04, "name4", "block4"],
-		[msitem05, "name5", "block5"],
-		[msitem06, "name6", "block6"],
-		[msitem07, "name7", "block7"],
-		[msitem08, "name8", "block8"],
+		[msitem01, "Renzcell Loresco"],
+		[msitem02, "Jholichi Tempra"],
+		[msitem03, "Denmarc Angeles"],
+		[msitem04, "Jericho Villamor"],
+		[msitem05, "Ralph Comlumbres"],
+		[msitem06, "Ronald Reyes Jr."],
+		[msitem07, "Jofrey Acosta"],
+		[msitem08, "Marlo Mendoza"],
 	];
 
 	const msitef_imgs = [
-		[msitef01, "name1", "block1"],
-		[msitef02, "name2", "block2"],
-		[msitef03, "name3", "block3"],
-		[msitef04, "name4", "block4"],
-		[msitef05, "name5", "block5"],
-		[msitef06, "name6", "block6"],
-		[msitef07, "name7", "block7"],
-		[msitef08, "name8", "block8"],
+		[msitef01, "Samantha Aquino"],
+		[msitef02, "Kate Dispo"],
+		[msitef03, "Jewell Silaran"],
+		[msitef04, "Andrea Dela Cruz"],
+		[msitef05, "Angeline Zarate"],
+		[msitef06, "Iya Lomibao"],
+		[msitef07, "Kathleen Quinto"],
 	];
 
 	useEffect(() => {
@@ -78,7 +75,6 @@ function Picks(props) {
 		setcodsemis2(props.pick.codsemis2);
 		setcodfinals(props.pick.codfinals);
 
-		setsgt(props.pick.sgt);
 		setmsitem(props.pick.msitem);
 		setmsitef(props.pick.msitef);
 	});
@@ -182,7 +178,7 @@ function Picks(props) {
 					</Dropdown>
 					{mlcategory == "Semi-Finals" && (
 						<div
-							Style={{
+							style={{
 								display: "flex",
 								flexDirection: "column",
 								alignItems: "center",
@@ -199,14 +195,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setmlsemis1("team1");
+										picked("mlsemis1", "team1");
+									}}
 								>
 									<img
 										src={mlteam1_img}
 										className="img"
-										onClick={() => {
-											setmlsemis1("team1");
-											picked("mlsemis1", "team1");
-										}}
 									></img>
 								</div>
 								<div
@@ -216,14 +212,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setmlsemis1("team2");
+										picked("mlsemis1", "team2");
+									}}
 								>
 									<img
 										src={mlteam2_img}
 										className="img"
-										onClick={() => {
-											setmlsemis1("team2");
-											picked("mlsemis1", "team2");
-										}}
 									></img>
 								</div>
 							</div>
@@ -238,14 +234,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setmlsemis2("team3");
+										picked("mlsemis2", "team3");
+									}}
 								>
 									<img
 										src={mlteam3_img}
 										className="img"
-										onClick={() => {
-											setmlsemis2("team3");
-											picked("mlsemis2", "team3");
-										}}
 									></img>
 								</div>
 								<div
@@ -255,14 +251,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setmlsemis2("team4");
+										picked("mlsemis2", "team4");
+									}}
 								>
 									<img
 										src={mlteam4_img}
 										className="img"
-										onClick={() => {
-											setmlsemis2("team4");
-											picked("mlsemis2", "team4");
-										}}
 									></img>
 								</div>
 							</div>
@@ -322,7 +318,7 @@ function Picks(props) {
 					</Dropdown>
 					{codcategory == "Semi-Finals" && (
 						<div
-							Style={{
+							style={{
 								display: "flex",
 								flexDirection: "column",
 								alignItems: "center",
@@ -339,14 +335,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setcodsemis1("team1");
+										picked("codsemis1", "team1");
+									}}
 								>
 									<img
 										src={codmteam1_img}
 										className="img"
-										onClick={() => {
-											setcodsemis1("team1");
-											picked("codsemis1", "team1");
-										}}
 									></img>
 								</div>
 								<div
@@ -356,14 +352,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setcodsemis1("team2");
+										picked("codsemis1", "team2");
+									}}
 								>
 									<img
 										src={codmteam2_img}
 										className="img"
-										onClick={() => {
-											setcodsemis1("team2");
-											picked("codsemis1", "team2");
-										}}
 									></img>
 								</div>
 							</div>
@@ -378,14 +374,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setcodsemis2("team3");
+										picked("codsemis2", "team3");
+									}}
 								>
 									<img
 										src={codmteam3_img}
 										className="img"
-										onClick={() => {
-											setcodsemis2("team3");
-											picked("codsemis2", "team3");
-										}}
 									></img>
 								</div>
 								<div
@@ -395,14 +391,14 @@ function Picks(props) {
 											? "picked"
 											: "notpicked"
 									}
+									onClick={() => {
+										setcodsemis2("team4");
+										picked("codsemis2", "team4");
+									}}
 								>
 									<img
 										src={codmteam4_img}
 										className="img"
-										onClick={() => {
-											setcodsemis2("team4");
-											picked("codsemis2", "team4");
-										}}
 									></img>
 								</div>
 							</div>
@@ -427,24 +423,21 @@ function Picks(props) {
 							picked={
 								msitem == contestant[1] ? "picked" : "notpicked"
 							}
+							onClick={() => {
+								console.log(contestant[1]);
+								setmsitem(contestant[1]);
+								picked("msitem", contestant[1]);
+							}}
 							key={contestant[1] + "/div"}
 						>
 							<img
 								src={contestant[0]}
 								className="msite_img"
-								onClick={() => {
-									console.log(contestant[1]);
-									setmsitem(contestant[1]);
-									picked("msitem", contestant[1]);
-								}}
 								key={contestant[1] + "/img"}
 							></img>
 							<h5 key={contestant[1] + "/name"}>
 								{contestant[1]}
 							</h5>
-							<h6 key={contestant[1] + "/block"}>
-								{contestant[2]}
-							</h6>
 						</div>
 					))}
 				</div>
@@ -455,24 +448,27 @@ function Picks(props) {
 				</div>
 				<br></br>
 				<div className="categorywrap" id="ms_site">
-					{msitem_imgs.map((contestant) => (
+					{msitef_imgs.map((contestant) => (
 						<div
 							className="msitefDiv"
 							picked={
 								msitef == contestant[1] ? "picked" : "notpicked"
 							}
+							onClick={() => {
+								console.log(contestant[1]);
+								setmsitef(contestant[1]);
+								picked("msitef", contestant[1]);
+							}}
+							key={contestant[1] + "/div"}
 						>
 							<img
 								src={contestant[0]}
 								className="msite_img"
-								onClick={() => {
-									console.log(contestant[1]);
-									setmsitef(contestant[1]);
-									picked("msitef", contestant[1]);
-								}}
+								key={contestant[1] + "/img"}
 							></img>
-							<h5>{contestant[1]}</h5>
-							<h6>{contestant[2]}</h6>
+							<h5 key={contestant[1] + "/name"}>
+								{contestant[1]}
+							</h5>
 						</div>
 					))}
 				</div>
