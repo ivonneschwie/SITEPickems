@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import "./components.css";
 import { Dropdown } from "react-bootstrap";
+import Countdown from "react-countdown";
 
 import ml_logo from "../assets/ml/ml_logo.png";
 import mlteam1_img from "../assets/ml/ml_team1.png";
@@ -104,6 +105,21 @@ function Picks(props) {
 		console.log(category + ": " + val);
 	};
 
+	const renderer = ({ days, hours, minutes, completed }) => {
+		if (completed) {
+			return <div className="cd"> 00:00:00 </div>;
+		} else {
+			// Render a countdown
+			return (
+				<div className="cd">
+					{days < 10 ? "0" + days : days}:
+					{hours < 10 ? "0" + hours : hours}:
+					{minutes < 10 ? "0" + minutes : minutes}
+				</div>
+			);
+		}
+	};
+
 	return (
 		<>
 			<div style={{ color: "white" }}>
@@ -193,6 +209,12 @@ function Picks(props) {
 									MATCH 23
 								</h2>
 							</div>
+							<div>
+								<Countdown
+									date={"2024-11-25T12:30:00"}
+									renderer={renderer}
+								/>
+							</div>
 							<div className="categorywrap" id="mobilelegends">
 								<div
 									className="mlTeamDiv"
@@ -237,6 +259,13 @@ function Picks(props) {
 								>
 									MATCH 24
 								</h2>
+							</div>
+
+							<div>
+								<Countdown
+									date={"2024-11-25T12:30:00"}
+									renderer={renderer}
+								/>
 							</div>
 							<div className="categorywrap" id="mobilelegends">
 								<div
@@ -345,6 +374,13 @@ function Picks(props) {
 									MATCH 6
 								</h2>
 							</div>
+
+							<div>
+								<Countdown
+									date={"2024-11-25T12:30:00"}
+									renderer={renderer}
+								/>
+							</div>
 							<div className="categorywrap" id="callofduty">
 								<div
 									className="codTeamDiv"
@@ -389,6 +425,13 @@ function Picks(props) {
 								>
 									MATCH 7
 								</h2>
+							</div>
+
+							<div>
+								<Countdown
+									date={"2024-11-25T16:00:00"}
+									renderer={renderer}
+								/>
 							</div>
 							<div className="categorywrap" id="callofduty">
 								<div
@@ -435,78 +478,108 @@ function Picks(props) {
 					)}
 				</div>
 				{rule()}
-
-				<div className="categorylabel">
-					<h1
-						style={{
-							letterSpacing: "5px",
-						}}
-					>
-						Mr. SITE
-					</h1>
-				</div>
-				<br></br>
-				<div className="categorywrap" id="mr_site">
-					{msitem_imgs.map((contestant) => (
-						<div
-							className="msitemDiv"
-							picked={
-								msitem == contestant[1] ? "picked" : "notpicked"
-							}
-							onClick={() => {
-								console.log(contestant[1]);
-								setmsitem(contestant[1]);
-								picked("msitem", contestant[1]);
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+				>
+					<div className="categorylabel">
+						<h1
+							style={{
+								letterSpacing: "5px",
 							}}
-							key={contestant[1] + "/div"}
 						>
-							<img
-								src={contestant[0]}
-								className="msite_img"
-								key={contestant[1] + "/img"}
-							></img>
-							<h5 key={contestant[1] + "/name"}>
-								{contestant[1]}
-							</h5>
-						</div>
-					))}
+							Mr. SITE
+						</h1>
+					</div>
+					<br></br>
+					<div>
+						<Countdown
+							date={"2024-11-27T13:30:00"}
+							renderer={renderer}
+						/>
+					</div>
+					<div className="categorywrap" id="mr_site">
+						{msitem_imgs.map((contestant) => (
+							<div
+								className="msitemDiv"
+								picked={
+									msitem == contestant[1]
+										? "picked"
+										: "notpicked"
+								}
+								onClick={() => {
+									console.log(contestant[1]);
+									setmsitem(contestant[1]);
+									picked("msitem", contestant[1]);
+								}}
+								key={contestant[1] + "/div"}
+							>
+								<img
+									src={contestant[0]}
+									className="msite_img"
+									key={contestant[1] + "/img"}
+								></img>
+								<h5 key={contestant[1] + "/name"}>
+									{contestant[1]}
+								</h5>
+							</div>
+						))}
+					</div>
 				</div>
 				{rule()}
-
-				<div className="categorylabel">
-					<h1
-						style={{
-							letterSpacing: "5px",
-						}}
-					>
-						Ms. SITE
-					</h1>
-				</div>
-				<br></br>
-				<div className="categorywrap" id="ms_site">
-					{msitef_imgs.map((contestant) => (
-						<div
-							className="msitefDiv"
-							picked={
-								msitef == contestant[1] ? "picked" : "notpicked"
-							}
-							onClick={() => {
-								console.log(contestant[1]);
-								setmsitef(contestant[1]);
-								picked("msitef", contestant[1]);
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+					}}
+				>
+					<div className="categorylabel">
+						<h1
+							style={{
+								letterSpacing: "5px",
 							}}
-							key={contestant[1] + "/div"}
 						>
-							<img
-								src={contestant[0]}
-								className="msite_img"
-								key={contestant[1] + "/img"}
-							></img>
-							<h5 key={contestant[1] + "/name"}>
-								{contestant[1]}
-							</h5>
-						</div>
-					))}
+							Ms. SITE
+						</h1>
+					</div>
+					<br></br>
+					<div>
+						<Countdown
+							date={"2024-11-27T13:30:00"}
+							renderer={renderer}
+						/>
+					</div>
+					<div className="categorywrap" id="ms_site">
+						{msitef_imgs.map((contestant) => (
+							<div
+								className="msitefDiv"
+								picked={
+									msitef == contestant[1]
+										? "picked"
+										: "notpicked"
+								}
+								onClick={() => {
+									console.log(contestant[1]);
+									setmsitef(contestant[1]);
+									picked("msitef", contestant[1]);
+								}}
+								key={contestant[1] + "/div"}
+							>
+								<img
+									src={contestant[0]}
+									className="msite_img"
+									key={contestant[1] + "/img"}
+								></img>
+								<h5 key={contestant[1] + "/name"}>
+									{contestant[1]}
+								</h5>
+							</div>
+						))}
+					</div>
 				</div>
 				{rule()}
 			</div>
