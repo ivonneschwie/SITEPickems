@@ -185,7 +185,13 @@ function Picks(props) {
 							}}
 						>
 							<div className="gamesDiv">
-								<h2>Game 1</h2>
+								<h2
+									style={{
+										letterSpacing: "5px",
+									}}
+								>
+									MATCH 23
+								</h2>
 							</div>
 							<div className="categorywrap" id="mobilelegends">
 								<div
@@ -224,7 +230,13 @@ function Picks(props) {
 								</div>
 							</div>
 							<div className="gamesDiv">
-								<h2>Game2</h2>
+								<h2
+									style={{
+										letterSpacing: "5px",
+									}}
+								>
+									MATCH 24
+								</h2>
 							</div>
 							<div className="categorywrap" id="mobilelegends">
 								<div
@@ -325,7 +337,13 @@ function Picks(props) {
 							}}
 						>
 							<div className="gamesDiv">
-								<h2>Game 1</h2>
+								<h2
+									style={{
+										letterSpacing: "5px",
+									}}
+								>
+									MATCH 6
+								</h2>
 							</div>
 							<div className="categorywrap" id="callofduty">
 								<div
@@ -364,7 +382,13 @@ function Picks(props) {
 								</div>
 							</div>
 							<div className="gamesDiv">
-								<h2>Game2</h2>
+								<h2
+									style={{
+										letterSpacing: "5px",
+									}}
+								>
+									MATCH 7
+								</h2>
 							</div>
 							<div className="categorywrap" id="callofduty">
 								<div
@@ -413,7 +437,13 @@ function Picks(props) {
 				{rule()}
 
 				<div className="categorylabel">
-					<h1>Mr. SITE</h1>
+					<h1
+						style={{
+							letterSpacing: "5px",
+						}}
+					>
+						Mr. SITE
+					</h1>
 				</div>
 				<br></br>
 				<div className="categorywrap" id="mr_site">
@@ -444,7 +474,13 @@ function Picks(props) {
 				{rule()}
 
 				<div className="categorylabel">
-					<h1>Ms. SITE</h1>
+					<h1
+						style={{
+							letterSpacing: "5px",
+						}}
+					>
+						Ms. SITE
+					</h1>
 				</div>
 				<br></br>
 				<div className="categorywrap" id="ms_site">

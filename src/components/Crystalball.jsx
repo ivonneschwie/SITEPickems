@@ -47,7 +47,7 @@ function Crystalball(props) {
 				<form onSubmit={updatePicks}>
 					<Category
 						category={esports}
-						label="ESPORTS"
+						label="ESPORTS FINALS"
 						pick={pick}
 					></Category>
 
