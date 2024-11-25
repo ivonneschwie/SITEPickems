@@ -107,7 +107,7 @@ function Picks(props) {
 
 	const renderer = ({ days, hours, minutes, completed }) => {
 		if (completed) {
-			return <div className="cd"> 00:00:00 </div>;
+			return <div className="cd"> PICKS LOCKED IN </div>;
 		} else {
 			// Render a countdown
 			return (
@@ -227,6 +227,7 @@ function Picks(props) {
 										setmlsemis1("team1");
 										picked("mlsemis1", "team1");
 									}}
+									id="win"
 								>
 									<img
 										src={mlteam1_img}
@@ -244,6 +245,7 @@ function Picks(props) {
 										setmlsemis1("team2");
 										picked("mlsemis1", "team2");
 									}}
+									id="lose"
 								>
 									<img
 										src={mlteam2_img}
@@ -279,6 +281,7 @@ function Picks(props) {
 										setmlsemis2("team3");
 										picked("mlsemis2", "team3");
 									}}
+									id="win"
 								>
 									<img
 										src={mlteam3_img}
@@ -296,6 +299,7 @@ function Picks(props) {
 										setmlsemis2("team4");
 										picked("mlsemis2", "team4");
 									}}
+									id="lose"
 								>
 									<img
 										src={mlteam4_img}
@@ -306,8 +310,64 @@ function Picks(props) {
 						</div>
 					)}
 					{mlcategory == "Finals" && (
-						<div style={{ margin: "50px" }}>
-							<h2>TBA</h2>
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+							}}
+						>
+							<div className="gamesDiv">
+								<h2
+									style={{
+										letterSpacing: "5px",
+									}}
+								>
+									MATCH 25
+								</h2>
+							</div>
+							<div>
+								<Countdown
+									date={"2024-11-26T09:50:00"}
+									renderer={renderer}
+								/>
+							</div>
+							<div className="categorywrap" id="mobilelegends">
+								<div
+									className="mlTeamDiv"
+									picked={
+										mlfinals == "team1"
+											? "picked"
+											: "notpicked"
+									}
+									onClick={() => {
+										setmlfinals("team1");
+										picked("mlfinals", "team1");
+									}}
+								>
+									<img
+										src={mlteam1_img}
+										className="img"
+									></img>
+								</div>
+								<div
+									className="mlTeamDiv"
+									picked={
+										mlfinals == "team3"
+											? "picked"
+											: "notpicked"
+									}
+									onClick={() => {
+										setmlfinals("team3");
+										picked("mlfinals", "team3");
+									}}
+								>
+									<img
+										src={mlteam3_img}
+										className="img"
+									></img>
+								</div>
+							</div>
 						</div>
 					)}
 				</div>
@@ -393,7 +453,7 @@ function Picks(props) {
 										setcodsemis1("team1");
 										picked("codsemis1", "team1");
 									}}
-									style={{ pointerEvents: "none" }}
+									id="lose"
 								>
 									<img
 										src={codmteam1_img}
@@ -411,7 +471,7 @@ function Picks(props) {
 										setcodsemis1("team2");
 										picked("codsemis1", "team2");
 									}}
-									style={{ pointerEvents: "none" }}
+									id="win"
 								>
 									<img
 										src={codmteam2_img}
@@ -419,6 +479,16 @@ function Picks(props) {
 									></img>
 								</div>
 							</div>
+						</div>
+					)}
+					{codcategory == "Finals" && (
+						<div
+							style={{
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+							}}
+						>
 							<div className="gamesDiv">
 								<h2
 									style={{
@@ -431,7 +501,7 @@ function Picks(props) {
 
 							<div>
 								<Countdown
-									date={"2024-11-25T16:00:00"}
+									date={"2024-11-26T13:30:00"}
 									renderer={renderer}
 								/>
 							</div>
@@ -439,13 +509,30 @@ function Picks(props) {
 								<div
 									className="codTeamDiv"
 									picked={
-										codsemis2 == "team3"
+										codfinals == "team2"
 											? "picked"
 											: "notpicked"
 									}
 									onClick={() => {
-										setcodsemis2("team3");
-										picked("codsemis2", "team3");
+										setcodfinals("team2");
+										picked("codfinals", "team2");
+									}}
+								>
+									<img
+										src={codmteam2_img}
+										className="img"
+									></img>
+								</div>
+								<div
+									className="codTeamDiv"
+									picked={
+										codfinals == "team3"
+											? "picked"
+											: "notpicked"
+									}
+									onClick={() => {
+										setcodfinals("team3");
+										picked("codfinals", "team3");
 									}}
 								>
 									<img
@@ -453,29 +540,7 @@ function Picks(props) {
 										className="img"
 									></img>
 								</div>
-								<div
-									className="codTeamDiv"
-									picked={
-										codsemis2 == "team4"
-											? "picked"
-											: "notpicked"
-									}
-									onClick={() => {
-										setcodsemis2("team4");
-										picked("codsemis2", "team4");
-									}}
-								>
-									<img
-										src={codmteam4_img}
-										className="img"
-									></img>
-								</div>
 							</div>
-						</div>
-					)}
-					{codcategory == "Finals" && (
-						<div style={{ margin: "50px" }}>
-							<h2>TBA</h2>
 						</div>
 					)}
 				</div>
