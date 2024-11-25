@@ -393,6 +393,7 @@ function Picks(props) {
 										setcodsemis1("team1");
 										picked("codsemis1", "team1");
 									}}
+									style={{ pointerEvents: "none" }}
 								>
 									<img
 										src={codmteam1_img}
@@ -410,6 +411,7 @@ function Picks(props) {
 										setcodsemis1("team2");
 										picked("codsemis1", "team2");
 									}}
+									style={{ pointerEvents: "none" }}
 								>
 									<img
 										src={codmteam2_img}
