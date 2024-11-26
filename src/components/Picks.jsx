@@ -517,6 +517,7 @@ function Picks(props) {
 										setcodfinals("team2");
 										picked("codfinals", "team2");
 									}}
+									id="locked"
 								>
 									<img
 										src={codmteam2_img}
@@ -534,6 +535,7 @@ function Picks(props) {
 										setcodfinals("team3");
 										picked("codfinals", "team3");
 									}}
+									id="locked"
 								>
 									<img
 										src={codmteam3_img}
