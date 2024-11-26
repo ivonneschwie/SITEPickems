@@ -344,9 +344,10 @@ function Picks(props) {
 										setmlfinals("team1");
 										picked("mlfinals", "team1");
 									}}
+									id="win"
 								>
 									<img
-										src={mlteam1_img}
+										src={mlteam2_img}
 										className="img"
 									></img>
 								</div>
@@ -361,6 +362,7 @@ function Picks(props) {
 										setmlfinals("team3");
 										picked("mlfinals", "team3");
 									}}
+									id="lose"
 								>
 									<img
 										src={mlteam3_img}
