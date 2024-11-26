@@ -43,6 +43,8 @@ function Picks(props) {
 	const [codsemis2, setcodsemis2] = useState([]);
 	const [codfinals, setcodfinals] = useState([]);
 
+	const [msitelocked, setmsitelocked] = useState(false);
+
 	const [msitem, setmsitem] = useState([]);
 	const [msitef, setmsitef] = useState([]);
 
@@ -107,6 +109,22 @@ function Picks(props) {
 
 	const renderer = ({ days, hours, minutes, completed }) => {
 		if (completed) {
+			return <div className="cd"> PICKS LOCKED IN </div>;
+		} else {
+			// Render a countdown
+			return (
+				<div className="cd">
+					{days < 10 ? "0" + days : days}:
+					{hours < 10 ? "0" + hours : hours}:
+					{minutes < 10 ? "0" + minutes : minutes}
+				</div>
+			);
+		}
+	};
+
+	const msiterenderer = ({ days, hours, minutes, completed }) => {
+		if (completed) {
+			setmsitelocked[true];
 			return <div className="cd"> PICKS LOCKED IN </div>;
 		} else {
 			// Render a countdown
@@ -519,7 +537,7 @@ function Picks(props) {
 										setcodfinals("team2");
 										picked("codfinals", "team2");
 									}}
-									id="locked"
+									id="win"
 								>
 									<img
 										src={codmteam2_img}
@@ -537,7 +555,7 @@ function Picks(props) {
 										setcodfinals("team3");
 										picked("codfinals", "team3");
 									}}
-									id="locked"
+									id="lose"
 								>
 									<img
 										src={codmteam3_img}
@@ -587,6 +605,7 @@ function Picks(props) {
 									picked("msitem", contestant[1]);
 								}}
 								key={contestant[1] + "/div"}
+								id={msitelocked ? "locked" : "unlocked"}
 							>
 								<img
 									src={contestant[0]}
@@ -639,6 +658,7 @@ function Picks(props) {
 									picked("msitef", contestant[1]);
 								}}
 								key={contestant[1] + "/div"}
+								id={msitelocked ? "locked" : "unlocked"}
 							>
 								<img
 									src={contestant[0]}
